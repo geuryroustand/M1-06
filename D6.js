@@ -475,18 +475,9 @@ logFu("Ex.17", "=", 30);
 */
 
 const sumAllTheYears = () => {
-  // const sumAll = movies.reduce((acc, curr) => {
-  //   return acc + parseInt(acc);
-  // }, 0);
+  const totalSum = movies.reduce((acc, curr) => acc + parseInt(curr.Year), 0);
 
-  // console.log(sumAll);
-
-  const totalSum = movies.reduce((acc, curr) => {
-    const sum = parseInt(mov.Year);
-
-    console.log(acc);
-    // console.log(sum);
-  });
+  console.log(totalSum);
 };
 
 sumAllTheYears();
@@ -497,6 +488,15 @@ logFu("Ex.18", "=", 30);
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
 
+let movTitle = "The Avengers";
+
+const searchByTitle = (title) => {
+  const movT = movies.filter((mov) => mov.Title === title);
+  console.log(movT);
+};
+
+searchByTitle(movTitle);
+
 logFu("Ex.19", "=", 30);
 
 /* Ex.19
@@ -505,11 +505,51 @@ logFu("Ex.19", "=", 30);
     and another array "unmatch" with all the remaining ones.
 */
 
+const searchAndDivide = (title) => {
+  const match = [];
+  const unmatch = [];
+
+  movies.forEach((arr) => {
+    if (arr.Title.includes(title)) {
+      match.push(arr.Title);
+    } else {
+      unmatch.push(arr.Title);
+    }
+  });
+
+  console.log(match);
+  console.log(unmatch);
+};
+
+searchAndDivide("Avengers");
+
 logFu("Ex.20", "=", 30);
 
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
 */
+
+const removeIndex = (n) => {
+  const ar = movies.filter((arr, i) => {
+    // return i !== n;
+
+    if (i !== n) {
+    }
+    // if (i !== n) {
+    // }
+    // return
+    // console.log(i);
+    // if (i === n) {
+    //   return arr.slice()
+    // }
+  });
+
+  console.log(ar.length);
+};
+
+removeIndex(2);
+
+console.log(movies.length);
 
 // [EXTRAS] JS Advanced
 
@@ -533,4 +573,16 @@ logFu("Ex.20", "=", 30);
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
+*/
+
+/*
+    ASSIGNMENT RULES
+    - All the answers must be written in JavaScript
+    - The solution must be pushed to the repository and be available for the tutors by the end of the day
+    - You can ask for help, reach the Teaching Assistants if needed
+    - You can google / use StackOverflow BUT we suggest you to use just the material provided
+    - You can test your code in a separate file or de-commenting the single exercises in this one.
+      You can use the bash terminal, the VSCode terminal or the one embedded in your Operating System if you're using macOS or Linux.
+    - Complete as many exercise that you can
+    - Publish them into your own GitHub account and upload repository link on Eduflow before 16.30 (Berlin Time) 
 */
